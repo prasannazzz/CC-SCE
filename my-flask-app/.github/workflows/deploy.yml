@@ -1,0 +1,21 @@
+name: Deploy to Kubernetes
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Build and Push Docker Image
+        run: |
+          # Add docker build and push steps here
+          echo "Building image..."
+          
+      - name: Apply Kubernetes manifests
+        run: |
+          # Add kubectl apply steps here
+          echo "Applying manifests..."
