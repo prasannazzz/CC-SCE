@@ -11,7 +11,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: my-flask-app   # ← ADD THIS
+        working-directory: my-flask-app
 
     steps:
       - name: Checkout code
@@ -33,3 +33,14 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/hello-flask-k8s:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/hello-flask-k8s:${{ github.sha }}
+
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            kubectl set image deployment/flask-app \
+              flask-app=prasannapatil91/hello-flask-k8s:latest
+            kubectl rollout status deployment/flask-app
