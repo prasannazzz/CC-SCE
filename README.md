@@ -1,4 +1,4 @@
-# Hello Flask K8s
+# Python Flask Application CI-CD Pipeline Deployment on AWS EC2 using Docker, Kubernates and Github Actions.
 
 A minimal, production-ready Flask web application designed for Kubernetes deployment, complete with a fully automated GitHub Actions CI/CD pipeline. The application serves a live response including the underlying pod hostname, making it ideal as a reference architecture or boilerplate for Python microservices running on Kubernetes.
 
