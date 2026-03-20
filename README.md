@@ -2,6 +2,11 @@
 
 A minimal, production-ready Flask web application designed for Kubernetes deployment, complete with a fully automated GitHub Actions CI/CD pipeline. The application serves a live response including the underlying pod hostname, making it ideal as a reference architecture or boilerplate for Python microservices running on Kubernetes.
 
+<img width="2206" height="1035" alt="diagram-export-21-03-2026-00_59_45" src="https://github.com/user-attachments/assets/edf395e7-7750-496a-aeb9-03911353b8ba" />
+
+
+
+
 ---
 
 ## Table of Contents
