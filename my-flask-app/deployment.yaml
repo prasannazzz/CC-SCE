@@ -1,19 +1,44 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: flask-app
+# spec:
+#   replicas: 3
+#   selector:
+#     matchLabels:
+#       app: flask
+#   template:
+#     metadata:
+#       labels:
+#         app: flask
+#     spec:
+#       containers:
+#       - name: flask
+#         image: flask-app:latest # Replace with your image
+#         ports:
+#         - containerPort: 5000
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flask-app
 spec:
-  replicas: 3
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   selector:
     matchLabels:
-      app: flask
+      app: flask-app
   template:
     metadata:
       labels:
-        app: flask
+        app: flask-app
     spec:
       containers:
-      - name: flask
-        image: flask-app:latest # Replace with your image
+      - name: flask-app
+        image: prasannapatil91/hello-flask-k8s:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
