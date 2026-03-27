@@ -10,7 +10,7 @@ app = Flask(__name__)
 expenses = []
 
 # Predefined categories
-CATEGORIES = ['Food & Dining', 'Transportation', 'Housing', 'Entertainment', 'Shopping', 'Healthcare', 'Other']
+CATEGORIES = ['Food & Dining', 'Transportation', 'Housing', 'Entertainment', 'Shopping', 'Healthcare', 'Meditation','Other']
 
 HTML_TEMPLATE = '''
 <!DOCTYPE html>
