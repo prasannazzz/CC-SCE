@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, url_for, render_template_string1
+from flask import Flask, request, redirect, url_for, render_template_string
 import os
 import uuid
 import json
