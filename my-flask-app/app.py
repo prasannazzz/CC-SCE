@@ -21,6 +21,7 @@ HTML_TEMPLATE = '''
     <title>Expense Tracker Pro</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <style>
         :root {
             --bg-color: #0f172a;
@@ -106,7 +107,26 @@ HTML_TEMPLATE = '''
         .stat-card .value.accent { color: var(--accent); }
 
         .layout-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; }
-        @media (max-width: 800px) { .layout-grid { grid-template-columns: 1fr; } }
+        
+        /* Mobile Responsiveness & Rendering Performance */
+        @media (max-width: 800px) {
+            .layout-grid { grid-template-columns: 1fr; gap: 20px; }
+            .blob, .blob2 { display: none; } /* Removes heavy CSS blur on mobile to fix lag */
+            body { padding: 15px 10px; }
+            .container {
+                padding: 20px;
+                background: rgba(30, 41, 59, 0.95);
+                backdrop-filter: none; /* Huge latency win on mobile */
+                -webkit-backdrop-filter: none;
+            }
+            .dashboard-grid { grid-template-columns: 1fr; gap: 15px; margin-bottom: 25px; }
+            h1 { font-size: 2rem; }
+            .stat-card { padding: 15px; }
+            .stat-card .value { font-size: 1.5rem; }
+            .table-section { padding: 10px; }
+            th, td { padding: 12px 8px; font-size: 0.85rem; }
+            .chart-container { margin-top: 20px; padding: 10px; }
+        }
 
         .form-section {
             background: rgba(15, 23, 42, 0.4); border-radius: 16px; padding: 24px; border: 1px solid var(--glass-border);
@@ -174,7 +194,7 @@ HTML_TEMPLATE = '''
         .filters a:hover:not(.active) { background: rgba(255,255,255,0.1); color: var(--text-color); }
     </style>
 </head>
-<body>
+<body hx-boost="true">
     <div class="blob"></div><div class="blob2"></div>
 
     <div class="container">
