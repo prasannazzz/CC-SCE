@@ -198,8 +198,8 @@ HTML_TEMPLATE = '''
     <div class="blob"></div><div class="blob2"></div>
 
     <div class="container">
-        <h1>Expense Tracker Pro</h1>
-        <p class="subtitle">Manage your finances intelligently</p>
+        <h1>Budget Tracker App/h1>
+        <p class="subtitle">Manage your finances smartly</p>
 
         <!-- Dashboard Stats -->
         <div class="dashboard-grid">
