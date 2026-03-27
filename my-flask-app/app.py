@@ -198,7 +198,7 @@ HTML_TEMPLATE = '''
     <div class="blob"></div><div class="blob2"></div>
 
     <div class="container">
-        <h1>Budget Tracker App</h1>
+        <h1>Budget Tracker Application</h1>
         <p class="subtitle">Manage your finances smartly</p>
 
         <!-- Dashboard Stats -->
