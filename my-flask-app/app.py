@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, url_for, render_template_string
+from flask import Flask, request, redirect, url_for, render_template_string1
 import os
 import uuid
 import json
@@ -10,7 +10,7 @@ app = Flask(__name__)
 expenses = []
 
 # Predefined categories
-CATEGORIES = ['Food & Dining', 'Transportation', 'Housing', 'Entertainment', 'Shopping', 'Healthcare', 'Meditation','Other']
+CATEGORIES = ['Food & Dining', 'Transportation', 'Housing', 'Entertainment', 'Shopping', 'Healthcare', 'Meditation', 'Movie','Other']
 
 HTML_TEMPLATE = '''
 <!DOCTYPE html>
