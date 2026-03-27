@@ -8,7 +8,7 @@ def hello():
     hostname = os.environ.get('HOSTNAME', 'unknown')
     return f'''
     <h1>Hello World!</h1>
-    <p>Running Prasanna v2</p>
+    <p>Running Prasanna Patilv2</p>
     <p>Pod: {hostname}</p>
     '''
 
