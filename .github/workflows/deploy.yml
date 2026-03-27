@@ -42,5 +42,5 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             kubectl set image deployment/flask-app \
-              flask-app=prasannapatil91/hello-flask-k8s:latest
+              flask-app=prasannapatil91/hello-flask-k8s:${{ github.sha }}
             kubectl rollout status deployment/flask-app
